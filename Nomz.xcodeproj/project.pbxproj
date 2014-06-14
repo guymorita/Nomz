@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA2F67E4194CD3E9009C3209 /* PrimaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2F67E2194CD3E9009C3209 /* PrimaryViewController.m */; };
+		BA2F67E5194CD3E9009C3209 /* PrimaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2F67E3194CD3E9009C3209 /* PrimaryViewController.xib */; };
+		BA2F67EC194CD45D009C3209 /* YelpClient.m in Sources */ = {isa = PBXBuildFile; fileRef = BA2F67EB194CD45D009C3209 /* YelpClient.m */; };
 		BA3A43E6194CD2E00000C6FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3A43E5194CD2E00000C6FA /* Foundation.framework */; };
 		BA3A43E8194CD2E00000C6FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3A43E7194CD2E00000C6FA /* CoreGraphics.framework */; };
 		BA3A43EA194CD2E00000C6FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3A43E9194CD2E00000C6FA /* UIKit.framework */; };
@@ -19,6 +22,9 @@
 		BA3A4401194CD2E00000C6FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA3A43E9194CD2E00000C6FA /* UIKit.framework */; };
 		BA3A4409194CD2E00000C6FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BA3A4407194CD2E00000C6FA /* InfoPlist.strings */; };
 		BA3A440B194CD2E00000C6FA /* NomzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3A440A194CD2E00000C6FA /* NomzTests.m */; };
+		BAF7FC26194CE19D0064CB02 /* NomzTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF7FC24194CE19D0064CB02 /* NomzTableViewCell.m */; };
+		BAF7FC27194CE19D0064CB02 /* NomzTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF7FC25194CE19D0064CB02 /* NomzTableViewCell.xib */; };
+		D7AFD0F61B75413FB0CFAC0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD83DC1867984FD4A41D7E19 /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		874FFB9495D047779B043DEA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		AD83DC1867984FD4A41D7E19 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA2F67E1194CD3E9009C3209 /* PrimaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimaryViewController.h; sourceTree = "<group>"; };
+		BA2F67E2194CD3E9009C3209 /* PrimaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrimaryViewController.m; sourceTree = "<group>"; };
+		BA2F67E3194CD3E9009C3209 /* PrimaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrimaryViewController.xib; sourceTree = "<group>"; };
+		BA2F67EA194CD45D009C3209 /* YelpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YelpClient.h; sourceTree = "<group>"; };
+		BA2F67EB194CD45D009C3209 /* YelpClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YelpClient.m; sourceTree = "<group>"; };
 		BA3A43E2194CD2E00000C6FA /* Nomz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nomz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA3A43E5194CD2E00000C6FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BA3A43E7194CD2E00000C6FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +61,9 @@
 		BA3A4406194CD2E00000C6FA /* NomzTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NomzTests-Info.plist"; sourceTree = "<group>"; };
 		BA3A4408194CD2E00000C6FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BA3A440A194CD2E00000C6FA /* NomzTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NomzTests.m; sourceTree = "<group>"; };
+		BAF7FC23194CE19D0064CB02 /* NomzTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NomzTableViewCell.h; sourceTree = "<group>"; };
+		BAF7FC24194CE19D0064CB02 /* NomzTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NomzTableViewCell.m; sourceTree = "<group>"; };
+		BAF7FC25194CE19D0064CB02 /* NomzTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NomzTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +74,7 @@
 				BA3A43E8194CD2E00000C6FA /* CoreGraphics.framework in Frameworks */,
 				BA3A43EA194CD2E00000C6FA /* UIKit.framework in Frameworks */,
 				BA3A43E6194CD2E00000C6FA /* Foundation.framework in Frameworks */,
+				D7AFD0F61B75413FB0CFAC0E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +91,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA2F67E6194CD3EE009C3209 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA2F67E1194CD3E9009C3209 /* PrimaryViewController.h */,
+				BA2F67E2194CD3E9009C3209 /* PrimaryViewController.m */,
+				BA2F67E3194CD3E9009C3209 /* PrimaryViewController.xib */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		BA3A43D9194CD2E00000C6FA = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +108,7 @@
 				BA3A4404194CD2E00000C6FA /* NomzTests */,
 				BA3A43E4194CD2E00000C6FA /* Frameworks */,
 				BA3A43E3194CD2E00000C6FA /* Products */,
+				874FFB9495D047779B043DEA /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +128,7 @@
 				BA3A43E7194CD2E00000C6FA /* CoreGraphics.framework */,
 				BA3A43E9194CD2E00000C6FA /* UIKit.framework */,
 				BA3A43FE194CD2E00000C6FA /* XCTest.framework */,
+				AD83DC1867984FD4A41D7E19 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,6 +136,9 @@
 		BA3A43EB194CD2E00000C6FA /* Nomz */ = {
 			isa = PBXGroup;
 			children = (
+				BA6D32CE194CDF1F00C5157D /* Views */,
+				BA2F67E6194CD3EE009C3209 /* View Controllers */,
+				BA3A4417194CD3090000C6FA /* API */,
 				BA3A43F4194CD2E00000C6FA /* AppDelegate.h */,
 				BA3A43F5194CD2E00000C6FA /* AppDelegate.m */,
 				BA3A43F7194CD2E00000C6FA /* Images.xcassets */,
@@ -144,6 +176,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BA3A4417194CD3090000C6FA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				BA2F67EA194CD45D009C3209 /* YelpClient.h */,
+				BA2F67EB194CD45D009C3209 /* YelpClient.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		BA6D32CE194CDF1F00C5157D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BAF7FC23194CE19D0064CB02 /* NomzTableViewCell.h */,
+				BAF7FC24194CE19D0064CB02 /* NomzTableViewCell.m */,
+				BAF7FC25194CE19D0064CB02 /* NomzTableViewCell.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -151,9 +202,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA3A440E194CD2E00000C6FA /* Build configuration list for PBXNativeTarget "Nomz" */;
 			buildPhases = (
+				349B32BE60214EA880A53661 /* Check Pods Manifest.lock */,
 				BA3A43DE194CD2E00000C6FA /* Sources */,
 				BA3A43DF194CD2E00000C6FA /* Frameworks */,
 				BA3A43E0194CD2E00000C6FA /* Resources */,
+				A146157109884D21BEBFC106 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -219,6 +272,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA2F67E5194CD3E9009C3209 /* PrimaryViewController.xib in Resources */,
+				BAF7FC27194CE19D0064CB02 /* NomzTableViewCell.xib in Resources */,
 				BA3A43F0194CD2E00000C6FA /* InfoPlist.strings in Resources */,
 				BA3A43F8194CD2E00000C6FA /* Images.xcassets in Resources */,
 			);
@@ -234,12 +289,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		349B32BE60214EA880A53661 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A146157109884D21BEBFC106 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BA3A43DE194CD2E00000C6FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA2F67EC194CD45D009C3209 /* YelpClient.m in Sources */,
 				BA3A43F6194CD2E00000C6FA /* AppDelegate.m in Sources */,
+				BAF7FC26194CE19D0064CB02 /* NomzTableViewCell.m in Sources */,
+				BA2F67E4194CD3E9009C3209 /* PrimaryViewController.m in Sources */,
 				BA3A43F2194CD2E00000C6FA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,6 +447,7 @@
 		};
 		BA3A440F194CD2E00000C6FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 874FFB9495D047779B043DEA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -369,6 +461,7 @@
 		};
 		BA3A4410194CD2E00000C6FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 874FFB9495D047779B043DEA /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -439,6 +532,7 @@
 				BA3A4410194CD2E00000C6FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA3A4411194CD2E00000C6FA /* Build configuration list for PBXNativeTarget "NomzTests" */ = {
 			isa = XCConfigurationList;
@@ -447,6 +541,7 @@
 				BA3A4413194CD2E00000C6FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

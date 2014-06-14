@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "PrimaryViewController.h"
 
 @implementation AppDelegate
 
@@ -14,6 +15,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    [[UINavigationBar appearance] setBarTintColor:[UIColor blackColor]];
+
+    PrimaryViewController *primaryViewCon = [[PrimaryViewController alloc] initWithNibName:@"PrimaryViewController" bundle:nil];
+    UINavigationController *nomzNavigationCon = [[UINavigationController alloc] initWithRootViewController:primaryViewCon];
+    self.window.rootViewController = nomzNavigationCon;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
