@@ -31,18 +31,8 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        [self yelpRequest:@""];
         // You can register for Yelp API keys here: http://www.yelp.com/developers/manage_api_keys
-        self.client = [[YelpClient alloc] initWithConsumerKey:kYelpConsumerKey consumerSecret:kYelpConsumerSecret accessToken:kYelpToken accessSecret:kYelpTokenSecret];
-        
-        [self.client searchWithTerm:@"" success:^(AFHTTPRequestOperation *operation, id response) {
-//            NSLog(@"response: %@", response);
-            self.yelpResponse = response;
-            self.yelpBusinesses = self.yelpResponse[@"businesses"];
-            NSLog(@"%@", response);
-            [self.nomzTableView reloadData];
-        } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-            NSLog(@"error: %@", [error description]);
-        }];
         self.title = @"Nomz";
         
         self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
@@ -50,6 +40,9 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
         
         UIBarButtonItem *searchBarItem = [[UIBarButtonItem alloc] initWithCustomView:self.searchBar];
         self.navigationItem.rightBarButtonItem = searchBarItem;
+        
+        UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(selectFilter)];
+        self.navigationItem.leftBarButtonItem = filterButton;
    }
     return self;
 }
@@ -68,6 +61,25 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     // Dispose of any resources that can be recreated.
 }
 
+- (void)filterButtonClicked {
+    
+}
+
+- (void)yelpRequest:(NSString *)searchText {
+    self.client = [[YelpClient alloc] initWithConsumerKey:kYelpConsumerKey consumerSecret:kYelpConsumerSecret accessToken:kYelpToken accessSecret:kYelpTokenSecret];
+    
+    [self.client searchWithTerm:searchText success:^(AFHTTPRequestOperation *operation, id response) {
+        //            NSLog(@"response: %@", response);
+        self.yelpResponse = response;
+        self.yelpBusinesses = self.yelpResponse[@"businesses"];
+        NSLog(@"%@", response);
+        [self.nomzTableView reloadData];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"error: %@", [error description]);
+    }];
+
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.yelpBusinesses.count;
@@ -79,8 +91,11 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     return cell;
 }
 
-- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-    NSLog(@"%@", searchText);
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    NSLog(@"%@ was the text", searchBar.text);
+    [self yelpRequest:searchBar.text];
+    [searchBar resignFirstResponder];
 }
 
 
