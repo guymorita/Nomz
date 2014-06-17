@@ -1,5 +1,5 @@
 //
-//  FilterViewController.h
+//  FilterTableViewController.h
 //  Nomz
 //
 //  Created by Guy Morita on 6/16/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FilterViewController : UIViewController
+@interface FilterTableViewController : UITableViewController
 
 @end

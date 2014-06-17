@@ -9,6 +9,7 @@
 #import "PrimaryViewController.h"
 #import "YelpClient.h"
 #import "NomzTableViewCell.h"
+#import "FilterTableViewController.h"
 
 NSString * const kYelpConsumerKey = @"vxKwwcR_NMQ7WaEiQBK_CA";
 NSString * const kYelpConsumerSecret = @"33QCvh5bIF5jIHR5klQr7RtBDhQ";
@@ -98,7 +99,8 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 }
 
 - (IBAction)openFilterMenu:(id)sender {
-    NSLog(@"Filter menu opening");
+    FilterTableViewController *filterVC = [[FilterTableViewController alloc] init];
+    [self.navigationController pushViewController:filterVC animated:YES];
 }
 
 

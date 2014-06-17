@@ -24,8 +24,11 @@
 		BA3A440B194CD2E00000C6FA /* NomzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3A440A194CD2E00000C6FA /* NomzTests.m */; };
 		BAF7FC26194CE19D0064CB02 /* NomzTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF7FC24194CE19D0064CB02 /* NomzTableViewCell.m */; };
 		BAF7FC27194CE19D0064CB02 /* NomzTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF7FC25194CE19D0064CB02 /* NomzTableViewCell.xib */; };
-		BAF7FC2B194FCBE00064CB02 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF7FC29194FCBE00064CB02 /* FilterViewController.m */; };
-		BAF7FC2C194FCBE00064CB02 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF7FC2A194FCBE00064CB02 /* FilterViewController.xib */; };
+		BAF7FC30195002910064CB02 /* FilterTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF7FC2E195002910064CB02 /* FilterTableViewController.m */; };
+		BAF7FC31195002910064CB02 /* FilterTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF7FC2F195002910064CB02 /* FilterTableViewController.xib */; };
+		BAF7FC35195004FA0064CB02 /* FilterSwitchTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF7FC33195004FA0064CB02 /* FilterSwitchTableViewCell.m */; };
+		BAF7FC36195004FA0064CB02 /* FilterSwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF7FC34195004FA0064CB02 /* FilterSwitchTableViewCell.xib */; };
+		BAF7FC3B195008EE0064CB02 /* YelpManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF7FC3A195008EE0064CB02 /* YelpManager.m */; };
 		D7AFD0F61B75413FB0CFAC0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD83DC1867984FD4A41D7E19 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -66,9 +69,14 @@
 		BAF7FC23194CE19D0064CB02 /* NomzTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NomzTableViewCell.h; sourceTree = "<group>"; };
 		BAF7FC24194CE19D0064CB02 /* NomzTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NomzTableViewCell.m; sourceTree = "<group>"; };
 		BAF7FC25194CE19D0064CB02 /* NomzTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NomzTableViewCell.xib; sourceTree = "<group>"; };
-		BAF7FC28194FCBE00064CB02 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
-		BAF7FC29194FCBE00064CB02 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
-		BAF7FC2A194FCBE00064CB02 /* FilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
+		BAF7FC2D195002910064CB02 /* FilterTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterTableViewController.h; sourceTree = "<group>"; };
+		BAF7FC2E195002910064CB02 /* FilterTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterTableViewController.m; sourceTree = "<group>"; };
+		BAF7FC2F195002910064CB02 /* FilterTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterTableViewController.xib; sourceTree = "<group>"; };
+		BAF7FC32195004FA0064CB02 /* FilterSwitchTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterSwitchTableViewCell.h; sourceTree = "<group>"; };
+		BAF7FC33195004FA0064CB02 /* FilterSwitchTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterSwitchTableViewCell.m; sourceTree = "<group>"; };
+		BAF7FC34195004FA0064CB02 /* FilterSwitchTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterSwitchTableViewCell.xib; sourceTree = "<group>"; };
+		BAF7FC39195008EE0064CB02 /* YelpManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YelpManager.h; sourceTree = "<group>"; };
+		BAF7FC3A195008EE0064CB02 /* YelpManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YelpManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +107,9 @@
 		BA2F67E6194CD3EE009C3209 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				BAF7FC28194FCBE00064CB02 /* FilterViewController.h */,
-				BAF7FC29194FCBE00064CB02 /* FilterViewController.m */,
-				BAF7FC2A194FCBE00064CB02 /* FilterViewController.xib */,
+				BAF7FC2D195002910064CB02 /* FilterTableViewController.h */,
+				BAF7FC2E195002910064CB02 /* FilterTableViewController.m */,
+				BAF7FC2F195002910064CB02 /* FilterTableViewController.xib */,
 				BA2F67E1194CD3E9009C3209 /* PrimaryViewController.h */,
 				BA2F67E2194CD3E9009C3209 /* PrimaryViewController.m */,
 				BA2F67E3194CD3E9009C3209 /* PrimaryViewController.xib */,
@@ -144,6 +152,7 @@
 		BA3A43EB194CD2E00000C6FA /* Nomz */ = {
 			isa = PBXGroup;
 			children = (
+				BAF7FC38195008DC0064CB02 /* Controllers */,
 				BA6D32CE194CDF1F00C5157D /* Views */,
 				BA2F67E6194CD3EE009C3209 /* View Controllers */,
 				BA3A4417194CD3090000C6FA /* API */,
@@ -196,11 +205,23 @@
 		BA6D32CE194CDF1F00C5157D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BAF7FC32195004FA0064CB02 /* FilterSwitchTableViewCell.h */,
+				BAF7FC33195004FA0064CB02 /* FilterSwitchTableViewCell.m */,
+				BAF7FC34195004FA0064CB02 /* FilterSwitchTableViewCell.xib */,
 				BAF7FC23194CE19D0064CB02 /* NomzTableViewCell.h */,
 				BAF7FC24194CE19D0064CB02 /* NomzTableViewCell.m */,
 				BAF7FC25194CE19D0064CB02 /* NomzTableViewCell.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		BAF7FC38195008DC0064CB02 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BAF7FC39195008EE0064CB02 /* YelpManager.h */,
+				BAF7FC3A195008EE0064CB02 /* YelpManager.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,10 +301,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAF7FC2C194FCBE00064CB02 /* FilterViewController.xib in Resources */,
 				BA2F67E5194CD3E9009C3209 /* PrimaryViewController.xib in Resources */,
 				BAF7FC27194CE19D0064CB02 /* NomzTableViewCell.xib in Resources */,
 				BA3A43F0194CD2E00000C6FA /* InfoPlist.strings in Resources */,
+				BAF7FC36195004FA0064CB02 /* FilterSwitchTableViewCell.xib in Resources */,
+				BAF7FC31195002910064CB02 /* FilterTableViewController.xib in Resources */,
 				BA3A43F8194CD2E00000C6FA /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,8 +361,10 @@
 				BA2F67EC194CD45D009C3209 /* YelpClient.m in Sources */,
 				BA3A43F6194CD2E00000C6FA /* AppDelegate.m in Sources */,
 				BAF7FC26194CE19D0064CB02 /* NomzTableViewCell.m in Sources */,
+				BAF7FC30195002910064CB02 /* FilterTableViewController.m in Sources */,
+				BAF7FC35195004FA0064CB02 /* FilterSwitchTableViewCell.m in Sources */,
+				BAF7FC3B195008EE0064CB02 /* YelpManager.m in Sources */,
 				BA2F67E4194CD3E9009C3209 /* PrimaryViewController.m in Sources */,
-				BAF7FC2B194FCBE00064CB02 /* FilterViewController.m in Sources */,
 				BA3A43F2194CD2E00000C6FA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
