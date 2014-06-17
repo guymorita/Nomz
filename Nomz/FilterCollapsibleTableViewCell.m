@@ -1,16 +1,14 @@
 //
-//  FilterSwitchTableViewCell.m
+//  FilterCollapsibleTableViewCell.m
 //  Nomz
 //
-//  Created by Guy Morita on 6/16/14.
+//  Created by Guy Morita on 6/17/14.
 //  Copyright (c) 2014 geemoo. All rights reserved.
 //
 
-#import "FilterSwitchTableViewCell.h"
-#import "NomzSwitch.h"
+#import "FilterCollapsibleTableViewCell.h"
 
-
-@implementation FilterSwitchTableViewCell
+@implementation FilterCollapsibleTableViewCell
 
 - (void)awakeFromNib
 {

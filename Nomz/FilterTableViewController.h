@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FilterTableViewController : UITableViewController
+@property (strong, nonatomic) NSArray *filters;
 
 @end

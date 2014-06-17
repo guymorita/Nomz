@@ -23,6 +23,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 @property (strong, nonatomic) NSDictionary *yelpResponse;
 @property (strong, nonatomic) NSArray *yelpBusinesses;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) FilterTableViewController *filterVC;
 
 @end
 
@@ -32,7 +33,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self yelpRequest:@""];
+        [self yelpRequest:@"delicious"];
         // You can register for Yelp API keys here: http://www.yelp.com/developers/manage_api_keys
         self.title = @"Nomz";
         
@@ -44,6 +45,9 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
         
         UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(openFilterMenu:)];
         self.navigationItem.leftBarButtonItem = filterButton;
+        self.filterVC = [[FilterTableViewController alloc] init];
+    
+        
    }
     return self;
 }
@@ -69,7 +73,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 - (void)yelpRequest:(NSString *)searchText {
     self.client = [[YelpClient alloc] initWithConsumerKey:kYelpConsumerKey consumerSecret:kYelpConsumerSecret accessToken:kYelpToken accessSecret:kYelpTokenSecret];
     
-    [self.client searchWithTerm:searchText success:^(AFHTTPRequestOperation *operation, id response) {
+    [self.client searchWithTerm:searchText searchWithParameters:self.filterVC.filters success:^(AFHTTPRequestOperation *operation, id response) {
         self.yelpResponse = response;
         self.yelpBusinesses = self.yelpResponse[@"businesses"];
         NSLog(@"%@", response);
@@ -99,8 +103,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 }
 
 - (IBAction)openFilterMenu:(id)sender {
-    FilterTableViewController *filterVC = [[FilterTableViewController alloc] init];
-    [self.navigationController pushViewController:filterVC animated:YES];
+    [self.navigationController pushViewController:self.filterVC animated:YES];
 }
 
 

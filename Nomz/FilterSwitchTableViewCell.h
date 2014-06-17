@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class NomzSwitch;
+
 @interface FilterSwitchTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *filterBasicLabel;
-@property (weak, nonatomic) IBOutlet UISwitch *filterBasicSwitch;
+@property (weak, nonatomic) IBOutlet NomzSwitch *filterBasicSwitch;
 
 @end

@@ -20,12 +20,33 @@
     return self;
 }
 
-- (AFHTTPRequestOperation *)searchWithTerm:(NSString *)term success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+- (AFHTTPRequestOperation *)searchWithTerm:(NSString *)term searchWithParameters:(NSArray *)filterParameters success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
+    
+//    NSLog(@"%@", filterParameters);
+//    [self parseFilters:filterParameters];
     
     // For additional parameters, see http://www.yelp.com/developers/documentation/v2/search_api
     NSDictionary *parameters = @{@"term": term, @"location" : @"San Francisco"};
     
     return [self GET:@"search" parameters:parameters success:success failure:failure];
 }
+
+//- (NSMutableDictionary *)parseFilters:(NSArray *)filterParameters {
+//    NSMutableDictionary *yelpFilters = [[NSMutableDictionary alloc] init];
+//    int i;
+//    for (i = 0; i < [filterParameters count]; i++){
+//        switch (i) {
+//            case 1: {
+//                
+//            }
+//            case
+//                
+//        }
+//    }
+//    [yelpFilters setObject:@"bye" forKey:@"hi"];
+//    NSLog(@"dict %@", yelpFilters);
+//    return yelpFilters;
+//    
+//}
 
 @end
