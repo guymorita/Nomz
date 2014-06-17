@@ -24,6 +24,8 @@
 		BA3A440B194CD2E00000C6FA /* NomzTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA3A440A194CD2E00000C6FA /* NomzTests.m */; };
 		BAF7FC26194CE19D0064CB02 /* NomzTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF7FC24194CE19D0064CB02 /* NomzTableViewCell.m */; };
 		BAF7FC27194CE19D0064CB02 /* NomzTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF7FC25194CE19D0064CB02 /* NomzTableViewCell.xib */; };
+		BAF7FC2B194FCBE00064CB02 /* FilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAF7FC29194FCBE00064CB02 /* FilterViewController.m */; };
+		BAF7FC2C194FCBE00064CB02 /* FilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAF7FC2A194FCBE00064CB02 /* FilterViewController.xib */; };
 		D7AFD0F61B75413FB0CFAC0E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD83DC1867984FD4A41D7E19 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +66,9 @@
 		BAF7FC23194CE19D0064CB02 /* NomzTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NomzTableViewCell.h; sourceTree = "<group>"; };
 		BAF7FC24194CE19D0064CB02 /* NomzTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NomzTableViewCell.m; sourceTree = "<group>"; };
 		BAF7FC25194CE19D0064CB02 /* NomzTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NomzTableViewCell.xib; sourceTree = "<group>"; };
+		BAF7FC28194FCBE00064CB02 /* FilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewController.h; sourceTree = "<group>"; };
+		BAF7FC29194FCBE00064CB02 /* FilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewController.m; sourceTree = "<group>"; };
+		BAF7FC2A194FCBE00064CB02 /* FilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FilterViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +99,9 @@
 		BA2F67E6194CD3EE009C3209 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BAF7FC28194FCBE00064CB02 /* FilterViewController.h */,
+				BAF7FC29194FCBE00064CB02 /* FilterViewController.m */,
+				BAF7FC2A194FCBE00064CB02 /* FilterViewController.xib */,
 				BA2F67E1194CD3E9009C3209 /* PrimaryViewController.h */,
 				BA2F67E2194CD3E9009C3209 /* PrimaryViewController.m */,
 				BA2F67E3194CD3E9009C3209 /* PrimaryViewController.xib */,
@@ -272,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAF7FC2C194FCBE00064CB02 /* FilterViewController.xib in Resources */,
 				BA2F67E5194CD3E9009C3209 /* PrimaryViewController.xib in Resources */,
 				BAF7FC27194CE19D0064CB02 /* NomzTableViewCell.xib in Resources */,
 				BA3A43F0194CD2E00000C6FA /* InfoPlist.strings in Resources */,
@@ -331,6 +340,7 @@
 				BA3A43F6194CD2E00000C6FA /* AppDelegate.m in Sources */,
 				BAF7FC26194CE19D0064CB02 /* NomzTableViewCell.m in Sources */,
 				BA2F67E4194CD3E9009C3209 /* PrimaryViewController.m in Sources */,
+				BAF7FC2B194FCBE00064CB02 /* FilterViewController.m in Sources */,
 				BA3A43F2194CD2E00000C6FA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

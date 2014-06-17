@@ -41,7 +41,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
         UIBarButtonItem *searchBarItem = [[UIBarButtonItem alloc] initWithCustomView:self.searchBar];
         self.navigationItem.rightBarButtonItem = searchBarItem;
         
-        UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(selectFilter)];
+        UIBarButtonItem *filterButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCompose target:self action:@selector(openFilterMenu:)];
         self.navigationItem.leftBarButtonItem = filterButton;
    }
     return self;
@@ -69,7 +69,6 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     self.client = [[YelpClient alloc] initWithConsumerKey:kYelpConsumerKey consumerSecret:kYelpConsumerSecret accessToken:kYelpToken accessSecret:kYelpTokenSecret];
     
     [self.client searchWithTerm:searchText success:^(AFHTTPRequestOperation *operation, id response) {
-        //            NSLog(@"response: %@", response);
         self.yelpResponse = response;
         self.yelpBusinesses = self.yelpResponse[@"businesses"];
         NSLog(@"%@", response);
@@ -96,6 +95,10 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     NSLog(@"%@ was the text", searchBar.text);
     [self yelpRequest:searchBar.text];
     [searchBar resignFirstResponder];
+}
+
+- (IBAction)openFilterMenu:(id)sender {
+    NSLog(@"Filter menu opening");
 }
 
 
