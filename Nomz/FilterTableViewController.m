@@ -56,11 +56,18 @@
     
     [self.filterTableView registerNib:[UINib nibWithNibName:@"FilterCollapsibleTableViewCell" bundle:nil] forCellReuseIdentifier:@"FilterCollapsibleCell"];
     
+    UIBarButtonItem *searchButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(fireSearch:)];
+    self.navigationItem.rightBarButtonItem = searchButton;
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (IBAction)fireSearch:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

@@ -34,10 +34,9 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self yelpRequest:@"delicious"];
         // You can register for Yelp API keys here: http://www.yelp.com/developers/manage_api_keys
         self.title = @"Nomz";
-        
+        [self yelpRequest:@"delicious"];
         self.searchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 200, 50)];
         self.searchBar.delegate = self;
         
@@ -60,6 +59,10 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     [self.nomzTableView registerNib:[UINib nibWithNibName:@"NomzTableViewCell" bundle:nil] forCellReuseIdentifier:@"NomzTableViewCell"];
     self.nomzTableView.rowHeight = 120;
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self yelpRequest:@"delicious"];
 }
 
 - (void)didReceiveMemoryWarning
