@@ -56,6 +56,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 {
     [super viewDidLoad];
     self.nomzTableView.dataSource = self;
+    self.nomzTableView.delegate = self;
     [self.nomzTableView registerNib:[UINib nibWithNibName:@"NomzTableViewCell" bundle:nil] forCellReuseIdentifier:@"NomzTableViewCell"];
     self.nomzTableView.rowHeight = 120;
     
@@ -133,7 +134,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return [indexPath row] * 100;
+    return 120;
 }
 
 
