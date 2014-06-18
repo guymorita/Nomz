@@ -9,6 +9,7 @@
 #import "PrimaryViewController.h"
 #import "YelpClient.h"
 #import "NomzTableViewCell.h"
+#import "UIImageView+AFNetworking.h"
 #import "FilterTableViewController.h"
 
 NSString * const kYelpConsumerKey = @"vxKwwcR_NMQ7WaEiQBK_CA";
@@ -57,6 +58,7 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
     [super viewDidLoad];
     self.nomzTableView.dataSource = self;
     [self.nomzTableView registerNib:[UINib nibWithNibName:@"NomzTableViewCell" bundle:nil] forCellReuseIdentifier:@"NomzTableViewCell"];
+    self.nomzTableView.rowHeight = 120;
     
 }
 
@@ -91,8 +93,44 @@ NSString * const kYelpTokenSecret = @"mqtKIxMIR4iBtBPZCmCLEb-Dz3Y";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NomzTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"NomzTableViewCell" forIndexPath:indexPath];
-    cell.nomzPlaceName.text = self.yelpBusinesses[indexPath.row][@"name"];
+    
+    NSDictionary *yelpBusiness = self.yelpBusinesses[indexPath.row];
+    cell.nomzPlaceName.text = yelpBusiness[@"name"];
+    NSArray *locationArray = yelpBusiness[@"location"][@"address"];
+    if ([locationArray count] > 0) {
+        cell.nomzAddress.text = locationArray[0];
+    }
+    NSString *categoryList = @"";
+    for (NSArray *categoryArray in yelpBusiness[@"categories"]){
+        categoryList = [categoryList stringByAppendingFormat:@", %@", categoryArray[0]];
+    }
+    categoryList = [categoryList substringFromIndex:2];
+    cell.nomzCategory.text = categoryList;
+    NSURL *url = [NSURL URLWithString:yelpBusiness[@"image_url"]];
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    [cell.nomzMainImage setImageWithURLRequest:urlRequest placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image) {
+        cell.nomzMainImage.image = image;
+
+        NSURL *url2 = [NSURL URLWithString:yelpBusiness[@"rating_img_url_large"]];
+        NSURLRequest *urlRequest2 = [NSURLRequest requestWithURL:url2];
+        [cell.nomzMainImage setImageWithURLRequest:urlRequest2 placeholderImage:nil success:^(NSURLRequest *request, NSHTTPURLResponse *response, UIImage *image2) {
+            cell.nomzStarRating.image = image2;
+            
+        } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+            NSLog(@"failed");
+        }];
+
+        
+    } failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error) {
+        NSLog(@"failed");
+    }];
+
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [indexPath row] * 100;
 }
 
 

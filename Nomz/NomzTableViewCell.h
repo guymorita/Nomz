@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface NomzTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *nomzMainImage;
 @property (weak, nonatomic) IBOutlet UILabel *nomzPlaceName;
+@property (weak, nonatomic) IBOutlet UIImageView *nomzStarRating;
+@property (weak, nonatomic) IBOutlet UILabel *nomzAddress;
+@property (weak, nonatomic) IBOutlet UILabel *nomzCategory;
 
 @end

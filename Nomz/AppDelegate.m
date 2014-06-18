@@ -16,7 +16,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     [[UINavigationBar appearance] setBarTintColor:[UIColor redColor]];
-
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     PrimaryViewController *primaryViewCon = [[PrimaryViewController alloc] initWithNibName:@"PrimaryViewController" bundle:nil];
     UINavigationController *nomzNavigationCon = [[UINavigationController alloc] initWithRootViewController:primaryViewCon];
     self.window.rootViewController = nomzNavigationCon;

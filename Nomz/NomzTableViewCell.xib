@@ -6,24 +6,82 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="NomzTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="589" id="KGk-i7-Jjw" customClass="NomzTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="127"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="126"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88o-WV-mto">
-                        <rect key="frame" x="20" y="11" width="280" height="21"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="88o-WV-mto">
+                        <rect key="frame" x="106" y="11" width="194" height="16"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="194" id="GiN-Ce-f8N"/>
+                            <constraint firstAttribute="height" constant="16" id="rpL-sa-OXu"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uip-ux-yms">
+                        <rect key="frame" x="12" y="11" width="79" height="95"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="79" id="L2A-YL-NVP"/>
+                            <constraint firstAttribute="height" constant="103" id="flj-wB-QA3"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qPl-pi-DiO">
+                        <rect key="frame" x="106" y="35" width="124" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="cle-eZ-70R"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJQ-6y-XGK">
+                        <rect key="frame" x="106" y="64" width="194" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="194" id="bCq-MG-kqG"/>
+                            <constraint firstAttribute="height" constant="21" id="zOh-8A-kCI"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oO5-5D-XQa">
+                        <rect key="frame" x="106" y="85" width="194" height="21"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="194" id="0o4-7c-tm7"/>
+                            <constraint firstAttribute="height" constant="21" id="Xq2-KT-Hof"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
+                <constraints>
+                    <constraint firstItem="uip-ux-yms" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="1JO-PJ-hcm"/>
+                    <constraint firstItem="88o-WV-mto" firstAttribute="leading" secondItem="uip-ux-yms" secondAttribute="trailing" constant="15" id="1vw-jH-z8R"/>
+                    <constraint firstItem="oO5-5D-XQa" firstAttribute="top" secondItem="FJQ-6y-XGK" secondAttribute="bottom" id="35N-DH-AIS"/>
+                    <constraint firstItem="uip-ux-yms" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="12" id="5qc-yj-gJA"/>
+                    <constraint firstItem="qPl-pi-DiO" firstAttribute="top" secondItem="88o-WV-mto" secondAttribute="bottom" constant="8" id="7rc-KP-FmP"/>
+                    <constraint firstItem="qPl-pi-DiO" firstAttribute="trailing" secondItem="FJQ-6y-XGK" secondAttribute="trailing" constant="-70" id="B0e-wA-viY"/>
+                    <constraint firstItem="FJQ-6y-XGK" firstAttribute="top" secondItem="qPl-pi-DiO" secondAttribute="bottom" constant="7" id="Hux-gM-3NO"/>
+                    <constraint firstAttribute="bottom" secondItem="uip-ux-yms" secondAttribute="bottom" constant="12" id="NKt-0O-AOp"/>
+                    <constraint firstItem="oO5-5D-XQa" firstAttribute="leading" secondItem="uip-ux-yms" secondAttribute="trailing" constant="15" id="gGn-7X-2cX"/>
+                    <constraint firstItem="FJQ-6y-XGK" firstAttribute="leading" secondItem="uip-ux-yms" secondAttribute="trailing" constant="15" id="mM0-5T-4vH"/>
+                    <constraint firstItem="88o-WV-mto" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="rDK-Rd-5Yu"/>
+                    <constraint firstItem="qPl-pi-DiO" firstAttribute="leading" secondItem="uip-ux-yms" secondAttribute="trailing" constant="15" id="yfn-8Q-Ae6"/>
+                </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="nomzAddress" destination="FJQ-6y-XGK" id="Hn8-Xv-Ggz"/>
+                <outlet property="nomzCategory" destination="oO5-5D-XQa" id="ErE-gY-qr6"/>
+                <outlet property="nomzMainImage" destination="uip-ux-yms" id="7yZ-oI-RIN"/>
                 <outlet property="nomzPlaceName" destination="88o-WV-mto" id="cJl-pN-Tud"/>
+                <outlet property="nomzStarRating" destination="qPl-pi-DiO" id="319-9k-1Gq"/>
             </connections>
         </tableViewCell>
     </objects>

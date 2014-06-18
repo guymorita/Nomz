@@ -23,30 +23,54 @@
 - (AFHTTPRequestOperation *)searchWithTerm:(NSString *)term searchWithParameters:(NSArray *)filterParameters success:(void (^)(AFHTTPRequestOperation *operation, id response))success failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure {
     
 //    NSLog(@"%@", filterParameters);
-//    [self parseFilters:filterParameters];
+    NSMutableDictionary *parameters = [self parseFilters:filterParameters];
+    
+    [parameters setObject:@"San Francisco" forKey:@"location"];
+    [parameters setObject:term forKey:@"term"];
+
     
     // For additional parameters, see http://www.yelp.com/developers/documentation/v2/search_api
-    NSDictionary *parameters = @{@"term": term, @"location" : @"San Francisco"};
-    
+//    NSDictionary *parameters = @{@"term": term, @"location" : @"San Francisco"};
+    NSLog(@"dict %@", parameters);
+
     return [self GET:@"search" parameters:parameters success:success failure:failure];
 }
 
-//- (NSMutableDictionary *)parseFilters:(NSArray *)filterParameters {
-//    NSMutableDictionary *yelpFilters = [[NSMutableDictionary alloc] init];
-//    int i;
-//    for (i = 0; i < [filterParameters count]; i++){
-//        switch (i) {
-//            case 1: {
-//                
-//            }
-//            case
-//                
-//        }
-//    }
-//    [yelpFilters setObject:@"bye" forKey:@"hi"];
-//    NSLog(@"dict %@", yelpFilters);
-//    return yelpFilters;
-//    
-//}
+- (NSMutableDictionary *)parseFilters:(NSArray *)filterParameters {
+    NSMutableDictionary *yelpFilters = [[NSMutableDictionary alloc] init];
+    int i;
+    for (i = 0; i < [filterParameters count]; i++){
+        NSDictionary *dict = filterParameters[i];
+        NSNumber *selected = dict[@"selected"];
+        NSInteger selectedInt = [selected integerValue];
+        NSString *selectedStr = filterParameters[i][@"contents"][selectedInt];
+        
+        switch (i) {
+            case 0: {
+                if ([dict[@"value"] isEqualToNumber:@(1)]){
+                    [yelpFilters setObject:@"true" forKey:@"deals_filter"];
+                }
+                break;
+            }
+            case 1: {
+                NSArray *cuisine = @[@"newamerican", @"asianfusion", @"bbq", @"breakfast_brunch", @"burmese", @"chinese", @"dimsum", @"creperies"];
+                [yelpFilters setObject:cuisine[selectedInt] forKey:@"category_filter"];
+                break;
+            }
+            case 2: {
+                NSArray *distance = @[@"50", @"250", @"1000", @"5000", @"25000"];
+                [yelpFilters setObject:distance[selectedInt] forKey:@"radius_filter"];
+                break;
+            }
+            case 3: {
+                [yelpFilters setObject:[selected stringValue] forKey:@"sort"];
+                break;
+            }
+                
+        }
+    }
+    return yelpFilters;
+    
+}
 
 @end

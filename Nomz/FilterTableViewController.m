@@ -22,14 +22,26 @@
     self = [super init];
     self.filters = @[[@{@"nibname": @"FilterSwitchCell",
                        @"name": @"Deals",
-                       @"sectionTitle": @"Dealz",
+                       @"sectionTitle": @"Deals",
                        @"value": @(0)} mutableCopy],
                      [@{@"type": @"cSection",
                        @"collapsed": @(0),
                        @"sectionTitle": @"Categories",
-                       @"contents": @[@"Bagels", @"Bakeries"],
+                       @"contents": @[@"American", @"Asian", @"Barbeque", @"Breakfast & Brunch", @"Burmese", @"Chinese", @"Dim Sum", @"Creperies"],
                        @"selected": @(0),
-                       @"value": @(0)} mutableCopy]
+                       @"value": @(0)} mutableCopy],
+                     [@{@"type": @"cSection",
+                        @"collapsed": @(0),
+                        @"sectionTitle": @"Radius",
+                        @"contents": @[@"50 Meters", @"250 Meters", @"1 Km", @"5 Km", @"25 Km"],
+                        @"selected": @(0),
+                        @"value": @(0)} mutableCopy],
+                     [@{@"type": @"cSection",
+                        @"collapsed": @(0),
+                        @"sectionTitle": @"Sort",
+                        @"contents": @[@"Best Match", @"Distance", @"Highest Rated"],
+                        @"selected": @(0),
+                        @"value": @(0)} mutableCopy]
                      ];
     return self;
 }
@@ -68,9 +80,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (self.filters[section][@"type"] == @"cSection") {
-        BOOL myBoo = (BOOL)self.filters[section][@"collapsed"];
-        return myBoo ? [self.filters[section][@"contents"] count] : 1;
+    if ([self.filters[section][@"type"] isEqualToString:@"cSection"]) {
+        NSNumber *myNum = self.filters[section][@"collapsed"];
+        BOOL myBoo = [myNum boolValue];
+        return myBoo ? 1: [self.filters[section][@"contents"] count];
     } else {
         return 1;
     }
@@ -84,30 +97,39 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSDictionary *filter = self.filters[indexPath.row];
-//    FilterSwitchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:filter[@"nibname"] forIndexPath:indexPath];
-//    
-//    cell.filterBasicLabel.text = filter[@"name"];
-//    cell.filterBasicSwitch.on = [filter[@"value"] boolValue];
-//    cell.filterBasicSwitch.indexPath = indexPath.row;
-//    
-//    [cell.filterBasicSwitch addTarget:self action:@selector(switchFlipped:) forControlEvents:UIControlEventValueChanged];
     
-    if (self.filters[indexPath.section][@"type"] == @"cSection") {
+    if ([self.filters[indexPath.section][@"type"] isEqualToString:@"cSection"]) {
+        NSInteger index;
+        NSNumber *isCollapsedNumber = self.filters[indexPath.section][@"collapsed"];
+        BOOL isCollapsed = [isCollapsedNumber boolValue];
+        if (isCollapsed){
+            index = [self.filters[indexPath.section][@"selected"] integerValue];
+        } else {
+            index = indexPath.row;
+        }
         FilterCollapsibleTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FilterCollapsibleCell" forIndexPath:indexPath];
-        cell.filterTitle.text = self.filters[indexPath.section][@"contents"][indexPath.row];
+        cell.filterTitle.text = self.filters[indexPath.section][@"contents"][index];
         return cell;
     } else {
-        FilterSwitchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FilterSwitchCell" forIndexPath:indexPath];
+        NSDictionary *filter = self.filters[indexPath.row];
+        FilterSwitchTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:filter[@"nibname"] forIndexPath:indexPath];
+        
+        cell.filterBasicLabel.text = filter[@"name"];
+        cell.filterBasicSwitch.on = [filter[@"value"] boolValue];
+        cell.filterBasicSwitch.indexPath = indexPath.section;
+        
+        [cell.filterBasicSwitch addTarget:self action:@selector(switchFlipped:) forControlEvents:UIControlEventValueChanged];
         return cell;
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.filters[indexPath.section][@"type"] == @"cSection") {
-        self.filters[indexPath.section][@"collapsed"] = @(![self.filters[indexPath.section][@"collapsed"] boolValue]);
-        self.filters[indexPath.section][@"selected"] = indexPath.row;
-        [self.tableView reloadData];
+    if ([self.filters[indexPath.section][@"type"] isEqualToString:@"cSection"]) {
+        self.filters[indexPath.section][@"collapsed"] = [self.filters[indexPath.section][@"collapsed"] isEqualToNumber:@(0)] ? @(1) : @(0);
+        NSNumber *num = [NSNumber numberWithInt:indexPath.row];
+        self.filters[indexPath.section][@"selected"] = num;
+        [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:indexPath.section]
+                      withRowAnimation:UITableViewRowAnimationNone];
     }
     NSLog(@"%d %d %@", indexPath.section, indexPath.row, self.filters[indexPath.section][@"collapsed"]);
 }
@@ -117,6 +139,7 @@
     NomzSwitch *sw = (NomzSwitch *)sender;
     BOOL state = [sender isOn];
     NSNumber *rez = state == YES ? @(1) : @(0);
+    self.filters[sw.indexPath][@"value"] = rez;
     NSLog(@"%@, %i", rez, sw.indexPath);
 }
 
